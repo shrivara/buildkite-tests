@@ -1,0 +1,5 @@
+steps:
+  - label: "Tests"
+    command: "tests.sh"
+  - label: "Deploy"
+    command: "deploy.sh"
