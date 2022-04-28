@@ -1,5 +1,11 @@
 steps:
   - label: "Trigger example-1"
-    trigger: example-1-pipeline
+    command: |
+      if [[ $(buildkite-agent meta-data get "trigger-example-1") == "true" ]]; then
+        echo "true"
+      else
+        echo "false"
+      fi
+
   - label: "Trigger example-2"
     trigger: example-2-pipeline
