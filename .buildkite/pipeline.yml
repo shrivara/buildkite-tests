@@ -4,6 +4,12 @@ steps:
       echo "figured out what to trigger"
       echo "example-1" >> trigger_this
 
+  # - label: "Trigger example-1"
+  #   command: |
+  #     cat 1.yaml | buildkite-agent pipeline upload
+
   - label: "Trigger example-1"
     command: |
-      cat 1.yaml | buildkite-agent pipeline upload
+      if [[ "true" == "true" ]];
+        buildkite-agent pipeline upload example-1/pipeline.yml
+      fi
