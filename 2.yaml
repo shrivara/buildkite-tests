@@ -1,0 +1,3 @@
+steps:
+  - label: "Trigger example-2"
+    trigger: example-2-pipeline

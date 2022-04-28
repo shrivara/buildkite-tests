@@ -1,9 +1,9 @@
 steps:
+  - label: "Compute what to trigger"
+    command: |
+      echo "figured out what to trigger"
+      echo "example-1" >> trigger_this
+
   - label: "Trigger example-1"
     command: |
-      if [[ $(buildkite-agent meta-data get "trigger-example-1") == "true" ]]; then
-        buildkite-agent pipeline upload "example-1"
-      fi
-
-  - label: "Trigger example-2"
-    trigger: example-2-pipeline
+      cat 1.yaml | buildkite-agent pipeline upload
