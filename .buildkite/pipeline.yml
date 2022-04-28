@@ -2,9 +2,7 @@ steps:
   - label: "Trigger example-1"
     command: |
       if [[ $(buildkite-agent meta-data get "trigger-example-1") == "true" ]]; then
-        echo "true"
-      else
-        echo "false"
+        buildkite-agent pipeline upload "example-1"
       fi
 
   - label: "Trigger example-2"
