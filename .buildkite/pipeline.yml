@@ -10,6 +10,6 @@ steps:
 
   - label: "Trigger example-1"
     command: |
-      if [[ "true" == "true" ]];
+      if [[ "true" == "true" ]]; then
         buildkite-agent pipeline upload example-1/pipeline.yml
       fi
